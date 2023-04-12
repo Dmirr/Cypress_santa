@@ -1,0 +1,25 @@
+{
+  "name": "cypress_santa",
+  "version": "1.0.0",
+  "description": "learning cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dmirr/Cypress_santa.git"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "Dmirr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dmirr/Cypress_santa/issues"
+  },
+  "homepage": "https://github.com/Dmirr/Cypress_santa#readme",
+  "dependencies": {
+    "cypress": "^12.9.0"
+  }
+}
