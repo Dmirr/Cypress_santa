@@ -4,8 +4,9 @@
   "description": "learning cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "cy:open": "npx cypress open",
+    "cy:run": "cypress run",
+      },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Dmirr/Cypress_santa.git"
@@ -21,5 +22,8 @@
   "homepage": "https://github.com/Dmirr/Cypress_santa#readme",
   "dependencies": {
     "cypress": "^12.9.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0"
   }
 }
