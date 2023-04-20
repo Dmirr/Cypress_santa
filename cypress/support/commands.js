@@ -23,6 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("userLogin", (userEmail, userPass) => {
+  cy.contains("Вход и регистрация").click({ force: true });
+  cy.get(":nth-child(3) > .frm").type(userEmail);
+  cy.get(":nth-child(4) > .frm").type(userPass);
+  cy.get(".btn-main").click({ force: true });
+});
 Cypress.Commands.add("changePass", (newPassword) => {
   cy.get(
     '.layout-1__header-wrapper-fixed > .layout-1__header > .header > .header__items > .layout-row-start > [href="/account"] > .header-item > .header-item__text > .txt--med'
