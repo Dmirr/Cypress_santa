@@ -30,14 +30,14 @@ describe("Santa login UI&API", () => {
     cy.changePass(oldPass);
   });
 
-  it.only("user can`t login with old password - API,UI", () => {
+  it.only("user can login with new password - API,UI", () => {
     let newPass = faker.internet.password(8);
     cy.log(newPass);
     cy.request({
       metod: "PUT",
       headers: {
         cookie:
-          "__ym_uid=16734548431002114789; _ym_d=1673454843; adtech_uid=eb12ecd9-da63-486d-a791-3be86eeeb88b:santa-secret.ru; top100_id=t1.7627570.2108586738.1680379156247; _pm_=9v49d985fzyb7p3rsey5w47sleju6x9cisa; _ym_isad=2; jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQ5MTk3NzksImlhdCI6MTY4MjM1NTY2MSwiZXhwIjoxNjg0OTQ3NjYxfQ.1h9ZDY7gD6qVfUM1HoY0j2E0osWPgHXDbOczGzcP-cE; _ohmybid_cmf=2; last_visit=1682354696525::1682361896525; t3_sid_7627570=s1.685668441.1682361797280.1682361896727.7.4",
+          "_ym_uid=16734548431002114789; _ym_d=1673454843; adtech_uid=eb12ecd9-da63-486d-a791-3be86eeeb88b:santa-secret.ru; _ym_isad=2; top100_id=t1.7627570.2108586738.1680379156247; jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQ5MTk3NzksImlhdCI6MTY4MDM3OTE1OSwiZXhwIjoxNjgyOTcxMTU5fQ.-4-9MJGrHyqueOQlTWI70lFzJQO-2EcJmpLkU76v898; _ohmybid_cmf=2; last_visit=1680371968027::1680379168027; _pm_=69ibfe9d8zq1ktsbe2xzz6qxh4xsyg0snv2; t3_sid_7627570=s1.410775940.1680379156258.1680379168149.1.3",
       },
       url: "https://santa-secret.ru/api/account/password",
       body: { password: newPass },
@@ -57,7 +57,7 @@ describe("Santa login UI&API", () => {
       metod: "PUT",
       headers: {
         Cookie:
-          "_ym_uid=16734548431002114789; _ym_d=1673454843; adtech_uid=eb12ecd9-da63-486d-a791-3be86eeeb88b:santa-secret.ru; top100_id=t1.7627570.2108586738.1680379156247; _pm_=9v49d985fzyb7p3rsey5w47sleju6x9cisa; _ym_isad=2; jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQ5MTk3NzksImlhdCI6MTY4MjM1NTY2MSwiZXhwIjoxNjg0OTQ3NjYxfQ.1h9ZDY7gD6qVfUM1HoY0j2E0osWPgHXDbOczGzcP-cE; _ohmybid_cmf=2; last_visit=1682354696525::1682361896525; t3_sid_7627570=s1.685668441.1682361797280.1682361896727.7.4",
+          "_ym_uid=16734548431002114789; _ym_d=1673454843; adtech_uid=eb12ecd9-da63-486d-a791-3be86eeeb88b:santa-secret.ru; _ym_isad=2; top100_id=t1.7627570.2108586738.1680379156247; jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQ5MTk3NzksImlhdCI6MTY4MDM3OTE1OSwiZXhwIjoxNjgyOTcxMTU5fQ.-4-9MJGrHyqueOQlTWI70lFzJQO-2EcJmpLkU76v898; _ohmybid_cmf=2; last_visit=1680371968027::1680379168027; _pm_=69ibfe9d8zq1ktsbe2xzz6qxh4xsyg0snv2; t3_sid_7627570=s1.410775940.1680379156258.1680379168149.1.3",
       },
       url: "https://santa-secret.ru/api/account/password",
       body: { password: oldPass },
