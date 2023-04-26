@@ -13,7 +13,7 @@ describe("Tests for Коробка", () => {
 describe("Tests for Создать коробку", () => {
   it("passes", () => {
     cy.userLogin(userEmail, userPass);
-    cy.get('.home-page-buttons > [href="/box/new"] > .btn-main').click();
+    cy.contains("Создать коробку").click();
     cy.contains("Придумайте название коробке").should("exist");
   });
 });
