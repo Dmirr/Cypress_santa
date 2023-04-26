@@ -7,8 +7,11 @@
     "cy:open": "npx cypress open",
     "cy:run": "cypress run",
     "cy:dashboard": "npx cypress run --record --key 169ee9b6-7890-48a0-8d1d-e28d53b14c3f",
-    "cy:dash2":  "npx cypress run --config-file cypress.config.santa.js --record --key 169ee9b6-7890-48a0-8d1d-e28d53b14c3f"
-      },
+    "cy:dash2":  "npx cypress run --config-file cypress.config.santa.js --record --key 169ee9b6-7890-48a0-8d1d-e28d53b14c3f",
+    "cy:spec1":  "npx cypress run --spec 'cypress/e2e/santa.cy.js' --browser chrome",
+    "cy:spec2":  "npx cypress run --spec 'cypress/e2e/spec_santa.cy.js' --browser electron",
+    "cy:run:all": "npm run cy:spec1 && npm run cy:spec2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Dmirr/Cypress_santa.git"
