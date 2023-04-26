@@ -6,7 +6,8 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "cypress run",
-    "cy:dashboard": "npx cypress run --record --key 169ee9b6-7890-48a0-8d1d-e28d53b14c3f"
+    "cy:dashboard": "npx cypress run --record --key 169ee9b6-7890-48a0-8d1d-e28d53b14c3f",
+    "cy:dash2":  "npx cypress run --config-file cypress.config.santa.js --record --key 169ee9b6-7890-48a0-8d1d-e28d53b14c3f"
       },
   "repository": {
     "type": "git",
