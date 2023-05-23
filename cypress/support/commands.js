@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add("userLogin", (userEmail, userPass) => {
+Cypress.Commands.add("userLogin1", (userEmail, userPass) => {
   cy.contains("Вход и регистрация").click({ force: true });
   cy.get(":nth-child(3) > .frm").type(userEmail);
   cy.get(":nth-child(4) > .frm").type(userPass);
