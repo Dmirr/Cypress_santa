@@ -6,31 +6,26 @@ describe("Santa login UI&API", () => {
   let loginPage = new LoginPage();
   let oldPass = "test2077";
 
-  it("user can`t login with old password - UI", () => {
+  it.only("user can`t login with old password - UI", () => {
     let newPass = faker.internet.password(8); //8 charters
     cy.log(newPass);
     cy.visit("https://santa-secret.ru");
     cy.contains("Вход и регистрация").click({ force: true });
     loginPage.login("testdmirr@gmail.com", oldPass);
-    // cy.get(":nth-child(3) > .frm").type("testdmirr@gmail.com");
-    // cy.get(":nth-child(4) > .frm").type(oldPass);
-    // cy.get(".btn-main").click();
     cy.contains("Коробки").should("exist");
     cy.changePass(newPass);
     cy.contains("Выйти с сайта").click();
 
     cy.visit("https://santa-secret.ru");
     cy.contains("Вход и регистрация").click({ force: true });
-    cy.get(loginPageElements.loginField).type("testdmirr@gmail.com");
-    cy.get(loginPageElements.passField).type(oldPass);
-    cy.get(loginPageElements.loginButton).click();
+    loginPage.login("testdmirr@gmail.com", oldPass);
     cy.contains("Неверное имя пользователя").should("exist");
-    cy.get(":nth-child(4) > .frm").clear().type(newPass);
-    cy.get(".btn-main").click();
+    loginPage.elements.passField().clear().type(newPass);
+    loginPage.elements.loginButton().click();
     cy.changePass(oldPass);
   });
 
-  it.only("user can login with new password - API,UI", () => {
+  it("user can login with new password - API,UI", () => {
     let newPass = faker.internet.password(8);
     cy.log(newPass);
     cy.request({
