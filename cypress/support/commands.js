@@ -23,17 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
-Cypress.Commands.add("userLogin1", (userEmail, userPass) => {
+const loginPageElements = require("../fixtures/pages/loginPageSelectors.json");
+Cypress.Commands.add("userLogin", (userEmail, userPass) => {
   cy.contains("Вход и регистрация").click({ force: true });
-  cy.get(":nth-child(3) > .frm").type(userEmail);
-  cy.get(":nth-child(4) > .frm").type(userPass);
-  cy.get(".btn-main").click({ force: true });
+  cy.get(loginPageElements.loginField).type(userEmail);
+  cy.get(loginPageElements.passField).type(userPass);
+  cy.get(loginPageElements.loginButton).click({ force: true });
 });
 Cypress.Commands.add("changePass", (newPassword) => {
-  cy.get(
-    '.layout-1__header-wrapper-fixed > .layout-1__header > .header > .header__items > .layout-row-start > [href="/account"] > .header-item > .header-item__text > .txt--med'
-  ).click();
+  cy.get(loginPageElements.accountPage).click();
   cy.get(".layout-column-start > :nth-child(1) > .frm").type(newPassword);
   cy.get(
     ":nth-child(4) > .form-page-group__main > .layout-column-start > :nth-child(2) > .frm"

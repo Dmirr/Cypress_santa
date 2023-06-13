@@ -1,5 +1,7 @@
 {
   "loginField": ":nth-child(3) > .frm",
    "passField": ":nth-child(4) > .frm",
-   "loginButton": ".btn-main" 
+   "loginButton": ".btn-main",
+   "accountPage": ".layout-1__header-wrapper-fixed > .layout-1__header > .header > .header__items > .layout-row-start > [href='/account'] > .header-item > .header-item__text > .txt--med"
+  
 }
