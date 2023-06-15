@@ -1,6 +1,6 @@
 beforeEach(() => {
   cy.visit("/");
-  cy.userLogin1(userLoginData.userEmail, userLoginData.userPass);
+  cy.userLogin(userLoginData.userEmail, userLoginData.userPass);
 });
 const userLoginData = require("../fixtures/pages/userLoginData.json");
 describe("Tests for Коробка", () => {
